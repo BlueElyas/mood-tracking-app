@@ -4,12 +4,9 @@ import {
   Dialog,
   Heading,
   ModalOverlay,
-  Text,
-  RadioGroup,
 } from "react-aria-components";
 import BasicButton from "../button/BasicButton";
-import SingleTag from "../tag/SingleTag";
-import { moodTags } from "./constants";
+import StepWizard from "./components/steps/StepWizard";
 
 function MoodLoggerModal() {
   return (
@@ -30,36 +27,7 @@ function MoodLoggerModal() {
               >
                 <p>Log your mood</p>
               </Heading>
-
-              {/* Step Progress Bars */}
-              <div className="flex space-x-2">
-                <div className="h-2 flex-1 rounded-full bg-blue-600" />
-                <div className="h-2 flex-1 rounded-full bg-neutral-200" />
-                <div className="h-2 flex-1 rounded-full bg-neutral-200" />
-                <div className="h-2 flex-1 rounded-full bg-neutral-200" />
-              </div>
-
-              {/* Form Fields */}
-              <div className="space-y-4">
-                <Text className="text-2xl font-bold text-neutral-900">
-                  How was your mood today?
-                </Text>
-                <RadioGroup className="space-y-2">
-                  {moodTags.map((tag) => {
-                    return (
-                      <SingleTag
-                        key={tag.value}
-                        value={tag.value}
-                        emoji={tag.emoji}
-                        emojiStyle="w-12 h-12"
-                      />
-                    );
-                  })}
-                </RadioGroup>
-              </div>
-
-              {/* Submit Button */}
-              <BasicButton style="w-full">Submit</BasicButton>
+              <StepWizard />
             </form>
           </Dialog>
         </Modal>
