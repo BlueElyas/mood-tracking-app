@@ -48,14 +48,14 @@ export const spacing = {
 };
 
 export const borderRadius = {
-  "radius-0": "0px",
-  "radius-4": "4px",
-  "radius-6": "6px",
-  "radius-8": "8px",
-  "radius-10": "10px",
-  "radius-12": "12px",
-  "radius-16": "16px",
-  "radius-20": "20px",
-  "radius-24": "24px",
-  "radius-full": "999px",
+  none: "0px",
+  sm: "4px",
+  default: "6px",
+  md: "8px",
+  lg: "10px",
+  xl: "12px",
+  "2xl": "16px",
+  "3xl": "20px",
+  "4xl": "24px",
+  full: "999px",
 };
