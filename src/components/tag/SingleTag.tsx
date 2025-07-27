@@ -1,15 +1,20 @@
 import { Radio } from "react-aria-components";
+import Icon from "../icon/Icon";
+import type { IconName } from "../../types/types";
 
 interface Props {
   value: string;
+  emoji?: IconName;
+  emojiStyle?: string;
 }
 
-function SingleTag({ value }: Props) {
+function SingleTag(props: Props) {
+  const { value, emoji, emojiStyle } = props;
   return (
     <Radio
       value={value}
       className={({ isSelected, isFocusVisible }) =>
-        `group flex items-center gap-2 px-3 py-2 rounded-md border-2 ${
+        `group flex items-center gap-2 px-3 py-2 rounded-md border-2 justify-between  ${
           isSelected ? "bg-blue-100 border-blue-500" : "border-blue-100"
         } ${
           isFocusVisible
@@ -20,14 +25,19 @@ function SingleTag({ value }: Props) {
     >
       {({ isSelected }) => (
         <>
-          <div
-            className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-              isSelected ? "border-blue-600" : "border-neutral-900"
-            }`}
-          >
-            {isSelected && <div className="w-2 h-2 bg-blue-600 rounded-full" />}
+          <div className="flex items-center gap-2">
+            <div
+              className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                isSelected ? "border-blue-600" : "border-neutral-900"
+              }`}
+            >
+              {isSelected && (
+                <div className="w-2 h-2 bg-blue-600 rounded-full" />
+              )}
+            </div>
+            <span className="text-neutral-900 font-bold">{value}</span>
           </div>
-          <span className="text-neutral-900 font-bold">{value}</span>
+          {emoji ? <Icon className={`${emojiStyle}`} name={emoji} /> : ""}
         </>
       )}
     </Radio>
