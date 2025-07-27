@@ -4,7 +4,7 @@ import TextInput from "../../components/input/Input";
 
 function Homepage() {
   return (
-    <div className="text-red-700 bg-green-300">
+    <div className="text-red-700 ">
       <p>Homepage</p>
       <Icon name="check" />
       <TextInput name="email" type="email" />
