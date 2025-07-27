@@ -3,17 +3,24 @@ import { Button } from "react-aria-components";
 
 interface Props extends PropsWithChildren {
   onPress?: () => void;
+  style?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 function BasicButton(props: Props) {
-  const { children, onPress } = props;
+  const { children, onPress, type = "button", disabled = false, style } = props;
 
-  const className =
-    "bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white";
+  const className = `bg-blue-700 px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white text-sm text-neutral-0 ${style}`;
 
   return (
     <>
-      <Button className={className} onPress={onPress}>
+      <Button
+        type={type}
+        isDisabled={disabled}
+        className={className}
+        onPress={onPress}
+      >
         {children}
       </Button>
     </>
