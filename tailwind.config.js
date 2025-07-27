@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 import { defaultColors } from "tailwindcss/defaultTheme";
 import {
-  borderRadius,
   colors,
   spacing,
   borderRadius,
+  backgroundImage,
 } from "./tailwind-constants";
 
 export default {
@@ -14,7 +14,13 @@ export default {
       fontFamily: {
         reddit: ["Reddit Sans", "sans-serif"],
       },
-      colors: { ...defaultColors, ...colors, ...spacing, ...borderRadius },
+      colors: {
+        ...defaultColors,
+        ...colors,
+      },
+      spacing,
+      borderRadius,
+      backgroundImage,
     },
   },
   plugins: [],

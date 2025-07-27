@@ -50,7 +50,7 @@ export const spacing = {
 export const borderRadius = {
   none: "0px",
   sm: "4px",
-  default: "6px",
+  DEFAULT: "6px",
   md: "8px",
   lg: "10px",
   xl: "12px",
@@ -58,4 +58,8 @@ export const borderRadius = {
   "3xl": "20px",
   "4xl": "24px",
   full: "999px",
+};
+
+export const backgroundImage = {
+  lightGradient: "linear-gradient(180deg, #F5F5FF 72.99%, #E0E0FF 100%)",
 };
