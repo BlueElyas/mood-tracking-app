@@ -1,3 +1,5 @@
+import ProgressBar from "../ProgressBar";
+
 type StepProps = {
   data: any;
   updateForm: (field: string, value: any) => void;
@@ -8,6 +10,7 @@ type StepProps = {
 function StepThree({ data, updateForm, next }: StepProps) {
   return (
     <div>
+      <ProgressBar isStepThree />
       <h2>Step 1: What's your name?</h2>
       <input
         type="text"

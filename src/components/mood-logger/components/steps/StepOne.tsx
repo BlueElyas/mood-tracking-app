@@ -1,7 +1,8 @@
-import { ProgressBar, RadioGroup, Text } from "react-aria-components";
+import { RadioGroup, Text } from "react-aria-components";
 import BasicButton from "../../../button/BasicButton";
 import SingleTag from "../../../tag/SingleTag";
 import { moodTags } from "../../constants";
+import ProgressBar from "../ProgressBar";
 
 type StepProps = {
   data?: any;
