@@ -1,15 +1,17 @@
-import BasicButton from "../../components/button/BasicButton";
-import Icon from "../../components/icon/Icon";
-import TextInput from "../../components/input/Input";
+import { RadioGroup } from "react-aria-components";
+import SingleTag from "../../components/tag/SingleTag";
+import MultipleTag from "../../components/tag/MultipleTag";
+import Hero from "./components/Hero";
 
 function Homepage() {
   return (
-    <div className="text-red-700 ">
-      <p>Homepage</p>
-      <Icon name="check" />
-      <TextInput name="email" type="email" />
-      <BasicButton>Sign up</BasicButton>
-    </div>
+    <>
+      <Hero />
+      <RadioGroup>
+        <SingleTag value="Tag 1" />
+        <MultipleTag value="Tag 2" />
+      </RadioGroup>
+    </>
   );
 }
 
