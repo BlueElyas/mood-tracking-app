@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 function RootLayout() {
   return (
     <>
-      <div className="bg-lightGradient">
+      <div className="bg-lightGradient h-screen ">
         <Navbar />
         <Outlet />
       </div>
