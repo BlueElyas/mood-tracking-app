@@ -12,7 +12,7 @@ interface Props {
 function TextInput(props: Props) {
   const { type, name, isDisabled, isLoading, isRequired, placeholder } = props;
 
-  const className = `max-w-[466px] borer-radius fill-neutral-0 text-neutral-600 border-neutral-300 border-2 border-solid rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 focus:ring-offset-white`;
+  const className = `fill-neutral-0 text-neutral-600 border-neutral-300 border-2 border-solid rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 focus:ring-offset-white `;
 
   return (
     <Input
