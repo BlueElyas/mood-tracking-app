@@ -12,10 +12,10 @@ type StepProps = {
 };
 
 function StepFour(props: StepProps) {
-  const { next } = props;
+  const { updateForm } = props;
   return (
     <div className="space-y-6">
-      <ProgressBar isStepTwo />
+      <ProgressBar isFinalStep />
       <div className="space-y-4 flex flex-col">
         <Text className="text-3xl font-text-neutral-900 font-semibold">
           How many hours did you sleep today?
@@ -28,8 +28,8 @@ function StepFour(props: StepProps) {
         })}
       </RadioGroup>
 
-      <BasicButton style="w-full" onPress={next}>
-        Continue
+      <BasicButton style="w-full" onPress={updateForm}>
+        Submit
       </BasicButton>
     </div>
   );

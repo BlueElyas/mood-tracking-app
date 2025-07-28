@@ -14,7 +14,7 @@ function StepThree(props: StepProps) {
   const { next } = props;
   return (
     <div className="space-y-6">
-      <ProgressBar isStepTwo />
+      <ProgressBar isStepThree />
       <div className="space-y-4 flex flex-col">
         <Text className="text-3xl font-text-neutral-900 font-semibold">
           Write about your day?

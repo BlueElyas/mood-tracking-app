@@ -2,7 +2,7 @@ import type { PropsWithChildren } from "react";
 import { Button } from "react-aria-components";
 
 interface Props extends PropsWithChildren {
-  onPress?: () => void;
+  onPress?: any; // TODO: Define a more specific type for onPress
   style?: string;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
