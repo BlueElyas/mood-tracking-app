@@ -1,4 +1,7 @@
 import ProgressBar from "../ProgressBar";
+import BasicButton from "../../../button/BasicButton";
+import { Text } from "react-aria-components";
+import Textarea from "../../../textarea.tsx/Textarea";
 
 type StepProps = {
   data: any;
@@ -7,17 +10,22 @@ type StepProps = {
   back: () => void;
 };
 
-function StepThree({ data, updateForm, next }: StepProps) {
+function StepThree(props: StepProps) {
+  const { next } = props;
   return (
-    <div>
-      <ProgressBar isStepThree />
-      <h2>Step 1: What's your name?</h2>
-      <input
-        type="text"
-        value={data.name}
-        onChange={(e) => updateForm("name", e.target.value)}
-      />
-      <button onClick={next}>Next</button>
+    <div className="space-y-6">
+      <ProgressBar isStepTwo />
+      <div className="space-y-4 flex flex-col">
+        <Text className="text-3xl font-text-neutral-900 font-semibold">
+          Write about your day?
+        </Text>
+      </div>
+
+      <Textarea />
+
+      <BasicButton style="w-full" onPress={next}>
+        Continue
+      </BasicButton>
     </div>
   );
 }

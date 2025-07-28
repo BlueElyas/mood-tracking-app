@@ -11,7 +11,7 @@ interface Props extends PropsWithChildren {
 function BasicButton(props: Props) {
   const { children, onPress, type = "button", disabled = false, style } = props;
 
-  const className = `bg-blue-700 px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white text-sm text-neutral-0 ${style}`;
+  const className = `bg-blue-700 px-4 py-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500  focus:ring-offset-2 font-semibold focus:ring-offset-white text-lg text-neutral-0 ${style}`;
 
   return (
     <>

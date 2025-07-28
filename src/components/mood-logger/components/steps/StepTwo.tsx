@@ -1,4 +1,9 @@
+import BasicButton from "../../../button/BasicButton";
+import MultipleTag from "../../../tag/MultipleTag";
+import { feelingTags } from "../../constants";
 import ProgressBar from "../ProgressBar";
+import { RadioGroup, Text } from "react-aria-components";
+
 type StepProps = {
   data: any;
   updateForm: (field: string, value: any) => void;
@@ -6,17 +11,25 @@ type StepProps = {
   back: () => void;
 };
 
-function StepTwo({ data, updateForm, next }: StepProps) {
+function StepTwo(props: StepProps) {
+  const { next } = props;
   return (
-    <div>
+    <div className="space-y-6">
       <ProgressBar isStepTwo />
-      <h2>Step 1: What's your name?</h2>
-      <input
-        type="text"
-        value={data.name}
-        onChange={(e) => updateForm("name", e.target.value)}
-      />
-      <button onClick={next}>Next</button>
+      <div className="space-y-4 flex flex-col">
+        <Text className="text-3xl font-text-neutral-900 font-semibold">
+          How was your mood today?
+        </Text>
+        <Text>Select up to three tags:</Text>
+        <RadioGroup className="flex flex-wrap gap-4">
+          {feelingTags.map((tag) => {
+            return <MultipleTag value={tag} />;
+          })}
+        </RadioGroup>
+      </div>
+      <BasicButton style="w-full" onPress={next}>
+        Continue
+      </BasicButton>
     </div>
   );
 }

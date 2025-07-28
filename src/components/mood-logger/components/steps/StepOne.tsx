@@ -17,10 +17,8 @@ function StepOne(props: StepProps) {
   return (
     <div className="space-y-6">
       <ProgressBar />
-
-      {/* Form Fields */}
       <div className="space-y-4">
-        <Text className="text-2xl font-text-neutral-900">
+        <Text className="text-3xl font-text-neutral-900 font-semibold">
           How was your mood today?
         </Text>
         <RadioGroup className="space-y-2">
@@ -37,7 +35,6 @@ function StepOne(props: StepProps) {
         </RadioGroup>
       </div>
 
-      {/* Submit Button */}
       <BasicButton style="w-full" onPress={next}>
         Continue
       </BasicButton>
