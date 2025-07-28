@@ -18,7 +18,7 @@ function StepTwo(props: StepProps) {
       <ProgressBar isStepTwo />
       <div className="space-y-4 flex flex-col">
         <Text className="text-3xl font-text-neutral-900 font-semibold">
-          How was your mood today?
+          How did you feel?
         </Text>
         <Text>Select up to three tags:</Text>
         <RadioGroup className="flex flex-wrap gap-4">
