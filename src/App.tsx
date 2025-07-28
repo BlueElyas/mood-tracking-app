@@ -3,6 +3,7 @@ import Homepage from "./pages/homepage/Homepage";
 import RootLayout from "./components/layout/RootLayout";
 import AuthLayout from "./components/layout/AuthLayout";
 import Login from "./pages/login/Login";
+import SignUp from "./pages/signup/SignUp";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       </Route>
       <Route path="/auth" element={<AuthLayout />}>
         <Route path="login" element={<Login />} />
-        <Route path="signup" element={<div>Signup Page</div>} />
+        <Route path="signup" element={<SignUp />} />
       </Route>
     </Routes>
   );
