@@ -1,13 +1,12 @@
 import { Outlet } from "react-router-dom";
-import Container from "../container/Container";
+import Icon from "../icon/Icon";
 
 function AuthLayout() {
   return (
     <>
-      <div className="bg-lightGradient h-screen ">
-        <Container>
-          <Outlet />
-        </Container>
+      <div className="bg-lightGradient h-screen flex flex-col gap-12 items-center justify-center">
+        <Icon name="logo" />
+        <Outlet />
       </div>
     </>
   );
