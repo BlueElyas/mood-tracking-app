@@ -37,6 +37,23 @@ This project is the frontend for a Mood Tracking App, designed to help users mon
 - **jsdom** simulates the DOM for testing React components.
 - **PostCSS & Autoprefixer** ensure CSS works across different browsers.
 
+## User Stories
+
+| As a user, I want to...                                                                         | So that I can...                                   |
+| ----------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| Log my mood, feelings, reflections, and sleep each day                                          | keep track of my emotional and physical well-being |
+| See today's mood, feelings, reflection, and sleep, once logged                                  | review my current day's entries                    |
+| See a relevant mood quote based on today's mood (found in the `data.json` file)                 | get inspiration or comfort tailored to my mood     |
+| See a graph showing the most recent eleven records to identify mood and sleep trends            | visualize my recent mood and sleep patterns        |
+| Interact with each bar on the mood and sleep trends chart to see all information about that day | get detailed insights for specific days            |
+| See my average mood and sleep from the past five check-ins and compare with the previous five   | track my progress over time                        |
+| Update my name or avatar through settings                                                       | personalize my profile                             |
+| View the optimal layout for the interface depending on my device's screen size                  | have a good experience on any device               |
+| See hover and focus states for all interactive elements on the page                             | know which elements are interactive and accessible |
+| Save details to a database (full-stack app)                                                     | persist my data securely                           |
+| Create an account and log in (user authentication)                                              | have a personalized and secure experience          |
+| Integrate with a third-party image-hosting service for the avatar upload                        | use custom images for my avatar                    |
+
 ## Project Purpose
 
 The Mood Tracking App allows users to log their moods, view trends, and gain insights into their emotional health over time.
