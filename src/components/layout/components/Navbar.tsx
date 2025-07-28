@@ -1,11 +1,11 @@
-import Avatar from "../../avatar/Avatar";
 import Icon from "../../icon/Icon";
+import ProfileDropdown from "./navbar-login-components/ProfileDropdown";
 
 function Header() {
   return (
     <div className="flex justify-between p-4 ">
       <Icon name="logo" className="w-28" />
-      <Avatar />
+      <ProfileDropdown />
     </div>
   );
 }
