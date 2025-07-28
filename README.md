@@ -13,6 +13,7 @@ This project is the frontend for a Mood Tracking App, designed to help users mon
 - **Formik**: Simplifies form state management and validation.
 - **React Aria Components**: Provides accessible UI primitives.
 - **React Spinners**: Collection of loading spinner components for React.
+- **Chart.js**: For rendering interactive charts and graphs.
 - **ESLint**: Lints code for consistency and quality.
 - **Vitest**: Provides a fast unit testing framework.
 - **@testing-library/react**: Utilities for testing React components.
@@ -31,6 +32,7 @@ This project is the frontend for a Mood Tracking App, designed to help users mon
 - **Formik** makes handling complex forms and validation easier.
 - **React Aria Components** ensures accessibility best practices.
 - **React Spinners** provides ready-to-use loading indicators.
+- **Chart.js** enables the creation of interactive and visually appealing charts for mood and sleep trends.
 - **ESLint** enforces code quality and best practices.
 - **Vitest** enables efficient and reliable testing.
 - **@testing-library/react** and **@testing-library/jest-dom** improve test readability and reliability.
