@@ -43,16 +43,17 @@ const data = [
 
 function BarChartMoods() {
   return (
-    <ResponsiveContainer height="80%">
-      <BarChart data={data}>
-        <XAxis />
-        <YAxis />
-        <Tooltip />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Bar dataKey="uv" fill="#82ca9d" />
-      </BarChart>
-    </ResponsiveContainer>
+    <div className="w-full h-[300px] md:h-[400px]">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={data}>
+          <XAxis />
+          <YAxis />
+          <Tooltip />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
-
 export default BarChartMoods;

@@ -10,7 +10,7 @@ function Container(props: Props) {
 
   return (
     <div
-      className={`bg-white rounded-2xl p-6 shadow-md flex flex-col items-start justify-center min-h-[140px] w-full max-w-xs gap-4 ${className}`}
+      className={`bg-white rounded-2xl p-6 shadow-md flex flex-col items-start justify-center min-h-[140px] w-full gap-4 ${className}`}
     >
       {children}
     </div>

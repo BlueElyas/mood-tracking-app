@@ -5,18 +5,21 @@ import Hero from "./components/Hero";
 
 function Homepage() {
   return (
-    <div className="flex flex-col   p-4">
+    <>
       <Hero />
-      <div className="flex  justify-center gap-6 mt-8">
-        <Container>
+      <div className="flex flex-col md:grid grid-cols-12 gap-6 max-w-6xl mx-auto mt-12 px-4">
+        {/* Left column */}
+        <Container className="col-span-4 gap-3">
           <AverageBox title="Mood" />
           <AverageBox title="Sleep" />
         </Container>
-        <Container>
+
+        {/* Right column */}
+        <Container className="col-span-8 overflow-x-scroll">
           <BarChartMoods />
         </Container>
       </div>
-    </div>
+    </>
   );
 }
 
