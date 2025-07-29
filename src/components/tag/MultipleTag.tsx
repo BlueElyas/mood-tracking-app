@@ -2,12 +2,18 @@ import { Checkbox } from "react-aria-components";
 
 interface Props {
   value: string;
+  isSelected?: boolean;
+  isDisabled?: boolean;
+  onChange?: (checked: boolean) => void;
 }
 
-function MultipleTag({ value }: Props) {
+function MultipleTag({ value, isSelected, isDisabled, onChange }: Props) {
   return (
     <Checkbox
       value={value}
+      isSelected={isSelected}
+      isDisabled={isDisabled}
+      onChange={onChange}
       className={({ isSelected, isFocusVisible }) =>
         `group flex items-center gap-2 px-3 py-2 w-fit rounded-md border-2 ${
           isSelected ? "bg-blue-100 border-blue-500" : "border-blue-100"
