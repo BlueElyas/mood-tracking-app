@@ -4,13 +4,7 @@ import SingleTag from "../../../tag/SingleTag";
 import { moodTags } from "../../constants";
 import ProgressBar from "../ProgressBar";
 import { useState } from "react";
-
-type StepProps = {
-  data?: any;
-  updateForm?: (field: string, value: any) => void;
-  next?: () => void;
-  back?: () => void;
-};
+import type { StepProps } from "../../../../types/types";
 
 function StepOne(props: StepProps) {
   const { next, data, updateForm } = props;

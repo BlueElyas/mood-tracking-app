@@ -4,13 +4,7 @@ import MultipleTag from "../../../tag/MultipleTag";
 import { feelingTags } from "../../constants";
 import ProgressBar from "../ProgressBar";
 import { Text } from "react-aria-components";
-
-type StepProps = {
-  data: any;
-  updateForm: (field: string, value: any) => void;
-  next: () => void;
-  back: () => void;
-};
+import type { StepProps } from "../../../../types/types";
 
 function StepTwo(props: StepProps) {
   const { next, data, updateForm } = props;
@@ -26,8 +20,8 @@ function StepTwo(props: StepProps) {
   };
 
   const handleContinue = () => {
-    updateForm("feelings", feelings);
-    next();
+    if (updateForm) updateForm("feelings", feelings);
+    if (next) next();
   };
 
   const isDisabled = feelings.length === 0 || feelings.length > 3;

@@ -30,3 +30,10 @@ export interface FormDataProps {
   hoursOfSleep: string;
   currentDay: Date;
 }
+
+export type StepProps = {
+  data?: FormDataProps;
+  updateForm?: (field: string, value: any) => void;
+  next?: () => void;
+  back?: () => void;
+};

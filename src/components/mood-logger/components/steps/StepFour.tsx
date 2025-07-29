@@ -3,13 +3,7 @@ import BasicButton from "../../../button/BasicButton";
 import { RadioGroup, Text } from "react-aria-components";
 import { sleepOptions } from "../../constants";
 import SingleTag from "../../../tag/SingleTag";
-
-type StepProps = {
-  data: any;
-  updateForm: (field: string, value: any) => void;
-  next: () => void;
-  back: () => void;
-};
+import type { StepProps } from "../../../../types/types";
 
 function StepFour(props: StepProps) {
   const { updateForm } = props;
