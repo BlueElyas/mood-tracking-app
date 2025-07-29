@@ -8,7 +8,7 @@ export default function AverageBox(props: Props) {
   return (
     <>
       <div className="text-lg font-semibold text-neutral-900">
-        Average {title}
+        Average {title}{" "}
         <span className="text-sm font-normal text-neutral-500">
           (Last 5 Check-ins)
         </span>
