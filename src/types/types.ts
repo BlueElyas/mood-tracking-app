@@ -22,3 +22,11 @@ export type IconName =
   | "very-sad-color"
   | "very-sad-white"
   | "logo";
+
+export interface FormDataProps {
+  mood: string;
+  feelings: string[];
+  howYouFeel: string;
+  hoursOfSleep: string;
+  currentDay: Date;
+}

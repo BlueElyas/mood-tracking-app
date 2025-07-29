@@ -3,16 +3,18 @@ import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
+import type { FormDataProps } from "../../../../types/types";
 
 const steps = [StepOne, StepTwo, StepThree, StepFour];
 
 export default function StepWizard() {
   const [stepIndex, setStepIndex] = useState(0);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormDataProps>({
     mood: "",
     feelings: [],
     howYouFeel: "",
     hoursOfSleep: "",
+    currentDay: new Date(),
   });
 
   const StepComponent = steps[stepIndex];
