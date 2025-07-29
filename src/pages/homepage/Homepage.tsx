@@ -1,4 +1,4 @@
-import BarChartMoods from "../../components/chart/BarChart";
+import BarChartMoods from "../../components/chart/BarChartMoods";
 import Container from "../../components/container/Container";
 import AverageBox from "./components/AverageBox";
 import Hero from "./components/Hero";
