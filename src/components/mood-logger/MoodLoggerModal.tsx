@@ -20,7 +20,6 @@ function MoodLoggerModal() {
         <Modal className="bg-lightGradient rounded-lg p-6 w-full max-w-[600px] shadow-lg">
           <Dialog>
             <form className="space-y-6">
-              {/* Title */}
               <Heading
                 slot="title"
                 className="text-2xl font-bold text-neutral-900"
