@@ -3,6 +3,7 @@ import BasicButton from "../../../button/BasicButton";
 import SingleTag from "../../../tag/SingleTag";
 import { moodTags } from "../../constants";
 import ProgressBar from "../ProgressBar";
+import { useState } from "react";
 
 type StepProps = {
   data?: any;
@@ -12,7 +13,13 @@ type StepProps = {
 };
 
 function StepOne(props: StepProps) {
-  const { next } = props;
+  const { next, data, updateForm } = props;
+  const [selectedMood, setSelectedMood] = useState(data?.mood || "");
+
+  const handleContinue = () => {
+    if (updateForm) updateForm("mood", selectedMood);
+    if (next) next();
+  };
 
   return (
     <div className="space-y-6">
@@ -21,7 +28,11 @@ function StepOne(props: StepProps) {
         <Text className="text-3xl font-text-neutral-900 font-semibold">
           How was your mood today?
         </Text>
-        <RadioGroup className="space-y-2">
+        <RadioGroup
+          className="space-y-2"
+          value={selectedMood}
+          onChange={setSelectedMood}
+        >
           {moodTags.map((tag) => {
             return (
               <SingleTag
@@ -35,7 +46,7 @@ function StepOne(props: StepProps) {
         </RadioGroup>
       </div>
 
-      <BasicButton style="w-full" onPress={next}>
+      <BasicButton style="w-full" onPress={handleContinue}>
         Continue
       </BasicButton>
     </div>
