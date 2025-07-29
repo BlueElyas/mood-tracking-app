@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 
 function Homepage() {
   return (
-    <div className="flex flex-col justify-center  p-4">
+    <div className="flex flex-col   p-4">
       <Hero />
       <div className="flex  justify-center gap-6 mt-8">
         <Container>
