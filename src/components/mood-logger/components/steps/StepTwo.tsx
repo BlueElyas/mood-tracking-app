@@ -12,7 +12,8 @@ type StepProps = {
 };
 
 function StepTwo(props: StepProps) {
-  const { next } = props;
+  const { next, data } = props;
+  console.log(data);
   return (
     <div className="space-y-6">
       <ProgressBar isStepTwo />
@@ -23,7 +24,7 @@ function StepTwo(props: StepProps) {
         <Text>Select up to three tags:</Text>
         <RadioGroup className="flex flex-wrap gap-4">
           {feelingTags.map((tag) => {
-            return <MultipleTag value={tag} />;
+            return <MultipleTag key={tag} value={tag} />;
           })}
         </RadioGroup>
       </div>
