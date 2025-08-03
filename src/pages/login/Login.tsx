@@ -24,6 +24,7 @@ function Login() {
   const navigate = useNavigate();
 
   function handleSubmit(values: { email: string; password: string }) {
+    localStorage.setItem("lastLoggedIn", JSON.stringify(new Date()));
     localStorage.setItem("user", JSON.stringify(values));
     navigate("/");
   }
