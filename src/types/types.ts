@@ -36,4 +36,5 @@ export type StepProps = {
   updateForm?: (field: string, value: any) => void;
   next?: () => void;
   back?: () => void;
+  submitForm?: () => void;
 };

@@ -31,6 +31,12 @@ export default function StepWizard() {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
+  console.log(formData);
+
+  const submitForm = () => {
+    console.log("Form submitting");
+  };
+
   return (
     <div>
       <StepComponent
@@ -38,6 +44,7 @@ export default function StepWizard() {
         updateForm={updateForm}
         next={next}
         back={back}
+        submitForm={submitForm}
       />
     </div>
   );

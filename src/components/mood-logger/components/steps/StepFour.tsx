@@ -4,9 +4,17 @@ import { RadioGroup, Text } from "react-aria-components";
 import { sleepOptions } from "../../constants";
 import SingleTag from "../../../tag/SingleTag";
 import type { StepProps } from "../../../../types/types";
+import { useState } from "react";
 
 function StepFour(props: StepProps) {
-  const { updateForm } = props;
+  const [selectedSleep, setSelectedSleep] = useState("");
+  const { updateForm, submitForm } = props;
+
+  const handleContinue = () => {
+    if (updateForm) updateForm("hoursOfSleep", selectedSleep);
+    if (submitForm) submitForm();
+  };
+
   return (
     <div className="space-y-6">
       <ProgressBar isFinalStep />
@@ -16,13 +24,13 @@ function StepFour(props: StepProps) {
         </Text>
       </div>
 
-      <RadioGroup className="flex flex-col gap-5">
+      <RadioGroup className="flex flex-col gap-5" onChange={setSelectedSleep}>
         {sleepOptions.map((item) => {
           return <SingleTag key={item} value={item} />;
         })}
       </RadioGroup>
 
-      <BasicButton style="w-full" onPress={updateForm}>
+      <BasicButton style="w-full" onPress={handleContinue}>
         Submit
       </BasicButton>
     </div>
