@@ -4,6 +4,7 @@ import { Label, Text } from "react-aria-components";
 import BasicButton from "../../components/button/BasicButton";
 import TextInput from "../../components/input/TextInput";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const title = "Welcome back!";
@@ -20,8 +21,11 @@ function Login() {
       .required("An email is required"),
   });
 
+  const navigate = useNavigate();
+
   function handleSubmit(values: { email: string; password: string }) {
-    localStorage.setItem("", JSON.stringify(values));
+    localStorage.setItem("user", JSON.stringify(values));
+    navigate("/");
   }
 
   return (
