@@ -1,3 +1,4 @@
+import type { ChangeEvent } from "react";
 import { Input } from "react-aria-components";
 
 interface Props {
@@ -7,6 +8,17 @@ interface Props {
   isDisabled?: boolean;
   isRequired?: boolean;
   placeholder?: string;
+  onChange?: {
+    (e: ChangeEvent<any>): void;
+    <T = string | ChangeEvent<any>>(field: T): T extends ChangeEvent<any>
+      ? void
+      : (e: string | ChangeEvent<any>) => void;
+  };
+  onBlur?: {
+    (e: FocusEvent): void;
+    <T = any>(fieldOrEvent: T): T extends string ? (e: any) => void : void;
+  };
+  value?: string;
 }
 
 function TextInput(props: Props) {
@@ -23,6 +35,9 @@ function TextInput(props: Props) {
       aria-busy={isLoading}
       className={className}
       placeholder={placeholder}
+      onChange={props.onChange}
+      onBlur={props.onBlur}
+      value={props.value}
     />
   );
 }

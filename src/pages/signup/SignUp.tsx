@@ -4,6 +4,7 @@ import { Label, Text } from "react-aria-components";
 import BasicButton from "../../components/button/BasicButton";
 import TextInput from "../../components/input/TextInput";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
   const title = "Create an account";
@@ -20,8 +21,11 @@ function SignUp() {
       .required("An email is required"),
   });
 
+  const navigate = useNavigate();
+
   function handleSubmit(values: { email: string; password: string }) {
-    localStorage.setItem("", JSON.stringify(values));
+    localStorage.setItem("user", JSON.stringify(values));
+    navigate("/");
   }
 
   return (
@@ -48,15 +52,26 @@ function SignUp() {
                     placeholder="name@gmail.com"
                     type="email"
                     name="email"
+                    onChange={formikProps.handleChange}
+                    onBlur={formikProps.handleBlur}
+                    value={formikProps.values.email}
                   />
                 </div>
                 <div className="mb-4 flex flex-col text-neutral-800 font-semibold text-sm">
                   <Label className="mb-2" htmlFor="password">
                     Password
                   </Label>
-                  <TextInput type="password" name="password" />
+                  <TextInput
+                    type="password"
+                    name="password"
+                    onChange={formikProps.handleChange}
+                    onBlur={formikProps.handleBlur}
+                    value={formikProps.values.password}
+                  />
                 </div>
-                <BasicButton style="w-full">{buttonText}</BasicButton>
+                <BasicButton type="submit" style="w-full">
+                  {buttonText}
+                </BasicButton>
                 <div className="text-center text-sm text-neutral-500 mt-8">
                   <Text>
                     {linkText}{" "}
