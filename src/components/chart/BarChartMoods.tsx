@@ -1,59 +1,42 @@
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  CartesianGrid,
-  ResponsiveContainer,
-} from "recharts";
+import { VictoryBar, VictoryChart, VictoryTheme } from "victory";
+import { moodMap, type MoodKey } from "./constants";
 
-const data = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-  },
+// Sample sleep data
+const sleepData: {
+  date: string;
+  hours: number;
+  mood: MoodKey;
+}[] = [
+  { date: "1st Aug", hours: 5, mood: "Sad" },
+  { date: "2nd Aug", hours: 7, mood: "Neutral" },
+  { date: "3rd Aug", hours: 8, mood: "Very Happy" },
+  { date: "4th Aug", hours: 4, mood: "Very Sad" },
+  { date: "5th Aug", hours: 6, mood: "Happy" },
 ];
 
-function BarChartMoods() {
+// Transform for Victory
+const chartData = sleepData.map((entry) => ({
+  x: entry.date,
+  y: entry.hours,
+  fill: moodMap[entry.mood].color,
+  label: moodMap[entry.mood].emoji, // optional, if you want emoji as label
+}));
+
+export default function BarChartMoods() {
   return (
-    <div className="w-full h-[300px] md:h-[400px]">
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data}>
-          <XAxis />
-          <YAxis />
-          <Tooltip />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Bar dataKey="uv" fill="#82ca9d" />
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
+    <VictoryChart domainPadding={{ x: 20 }} theme={VictoryTheme.clean}>
+      <VictoryBar
+        data={chartData}
+        style={{
+          data: {
+            fill: ({ datum }) => datum.fill,
+          },
+          labels: {
+            fontSize: 20,
+          },
+        }}
+        labels={({ datum }) => datum.label} // shows emoji above bar
+      />
+    </VictoryChart>
   );
 }
-export default BarChartMoods;
