@@ -8,17 +8,20 @@ function ProtectedRoutes() {
 
   useEffect(() => {
     const userString = localStorage.getItem("user");
-    const loggedIn = localStorage.getItem("isLoggedIn");
+    const loggedIn = localStorage.getItem("lastLoggedIn");
+    if (!userString) return;
 
-    setHasAccount(!!userString);
-    setIsLoggedIn(loggedIn === "true");
+    const userStringObj = JSON.parse(userString);
+
+    setHasAccount(Object.keys(userStringObj).length > 0);
+    setIsLoggedIn(loggedIn !== null);
     setIsChecking(false);
   }, []);
 
   if (isChecking) return null;
 
-  if (hasAccount) return <Navigate to="/create-account" />;
-  if (isLoggedIn) return <Navigate to="/login" />;
+  if (isLoggedIn || hasAccount) return <Navigate to="/login" />;
+  if (!hasAccount) return <Navigate to="/create-account" />;
 
   return <Outlet />;
 }
