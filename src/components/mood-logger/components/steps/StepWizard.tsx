@@ -4,6 +4,7 @@ import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
 import type { FormDataProps } from "../../../../types/types";
+import { useLocalStorage } from "../../../../hooks/useLocalStorage";
 
 const steps = [StepOne, StepTwo, StepThree, StepFour];
 
@@ -16,6 +17,7 @@ export default function StepWizard() {
     hoursOfSleep: "",
     currentDay: new Date(),
   });
+  const { save } = useLocalStorage("user");
 
   const StepComponent = steps[stepIndex];
 
@@ -34,7 +36,14 @@ export default function StepWizard() {
   console.log(formData);
 
   const submitForm = () => {
-    console.log("Form submitting");
+    save(formData);
+    setFormData({
+      mood: "",
+      feelings: [],
+      howYouFeel: "",
+      hoursOfSleep: "",
+      currentDay: new Date(),
+    });
   };
 
   return (
