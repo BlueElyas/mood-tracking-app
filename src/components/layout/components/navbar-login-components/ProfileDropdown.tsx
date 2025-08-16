@@ -8,6 +8,11 @@ export default function ProfileDropdown() {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const signOut = () => {
+    localStorage.setItem("user", "");
+    localStorage.setItem("lastLoggedIn", "");
+  };
+
   return (
     <>
       <DialogTrigger isOpen={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
@@ -38,7 +43,10 @@ export default function ProfileDropdown() {
                 Settings
               </Button>
 
-              <Button className="flex items-center gap-2 text-sm text-gray-700 hover:text-purple-600 transition">
+              <Button
+                className="flex items-center gap-2 text-sm text-gray-700 hover:text-purple-600 transition"
+                onPress={signOut}
+              >
                 <Icon name="logout" className="w-4 h-4" />
                 Logout
               </Button>
