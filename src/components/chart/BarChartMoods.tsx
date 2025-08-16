@@ -19,7 +19,9 @@ const chartData = sleepData.map((entry) => ({
   x: entry.date,
   y: entry.hours,
   fill: moodMap[entry.mood].color,
-  label: moodMap[entry.mood].emoji, // optional, if you want emoji as label
+  // label: moodMap[entry.mood].emoji, // optional, if you want emoji as label
+  topRight: "5px",
+  topLeft: "full",
 }));
 
 export default function BarChartMoods() {
@@ -35,7 +37,11 @@ export default function BarChartMoods() {
             fontSize: 20,
           },
         }}
-        labels={({ datum }) => datum.label} // shows emoji above bar
+        // labels={({ datum }) => datum.label} // shows emoji above bar
+        cornerRadius={{
+          topLeft: 10,
+          topRight: 10,
+        }}
       />
     </VictoryChart>
   );
