@@ -7,13 +7,6 @@ import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const title = "Welcome back!";
-  const helperText = "Log in to continue tracking your mood and sleep";
-  const buttonText = "Sign In";
-  const linkText = "Don't have an account?";
-  const linkHref = "/create-account";
-  const linkAction = "Create an account";
-
   const schema = Yup.object().shape({
     email: Yup.string()
       .email("Invalid email")
@@ -35,9 +28,11 @@ function Login() {
         <Icon name="logo" />
         <div className="bg-white rounded-2xl p-6 shadow-md flex flex-col  justify-center min-h-[503px] w-full max-w-[530px] gap-3">
           <Text className="text-4xl font-text-neutral-900 font-semibold">
-            {title}
+            Welcome back!
           </Text>
-          <Text className="text-neutral-300">{helperText}</Text>
+          <Text className="text-neutral-300">
+            Log in to continue tracking your mood and sleep
+          </Text>
           <Formik
             initialValues={{ email: "", password: "" }}
             validationSchema={schema}
@@ -61,15 +56,15 @@ function Login() {
                   </Label>
                   <TextInput type="password" name="password" />
                 </div>
-                <BasicButton style="w-full">{buttonText}</BasicButton>
+                <BasicButton style="w-full">Sign In</BasicButton>
                 <div className="text-center text-sm text-neutral-500 mt-8">
                   <Text>
-                    {linkText}{" "}
+                    Don't have an account?{" "}
                     <a
-                      href={linkHref}
+                      href="/create-account"
                       className="text-blue-500 hover:underline"
                     >
-                      {linkAction}
+                      Create an account
                     </a>
                   </Text>
                 </div>
@@ -79,14 +74,6 @@ function Login() {
         </div>
       </div>
     </>
-    // <AuthForm
-    //   title="Welcome back!"
-    //   helperText="Log in to continue tracking your mood and sleep"
-    //   buttonText="Sign In"
-    //   linkText="Don't have an account?"
-    //   linkHref="/login"
-    //   linkAction="Sign Up"
-    // />
   );
 }
 

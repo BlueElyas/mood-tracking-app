@@ -7,13 +7,6 @@ import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 
 function SignUp() {
-  const title = "Create an account";
-  const helperText = "Join to track your daily mood and sleep with ease.";
-  const buttonText = "Create an account";
-  const linkText = "Already got an account?";
-  const linkHref = "/login";
-  const linkAction = "Log in";
-
   const schema = Yup.object().shape({
     email: Yup.string()
       .email("Invalid email")
@@ -25,6 +18,7 @@ function SignUp() {
 
   function handleSubmit(values: { email: string; password: string }) {
     localStorage.setItem("user", JSON.stringify(values));
+    localStorage.setItem("lastLoggedIn", JSON.stringify(new Date()));
     navigate("/");
   }
 
@@ -34,9 +28,11 @@ function SignUp() {
         <Icon name="logo" />
         <div className="bg-white rounded-2xl p-6 shadow-md flex flex-col  justify-center min-h-[503px] w-full max-w-[530px] gap-3">
           <Text className="text-4xl font-text-neutral-900 font-semibold">
-            {title}
+            Create an account
           </Text>
-          <Text className="text-neutral-300">{helperText}</Text>
+          <Text className="text-neutral-300">
+            Join to track your daily mood and sleep with ease.
+          </Text>
           <Formik
             initialValues={{ email: "", password: "" }}
             validationSchema={schema}
@@ -70,16 +66,13 @@ function SignUp() {
                   />
                 </div>
                 <BasicButton type="submit" style="w-full">
-                  {buttonText}
+                  Create an account
                 </BasicButton>
                 <div className="text-center text-sm text-neutral-500 mt-8">
                   <Text>
-                    {linkText}{" "}
-                    <a
-                      href={linkHref}
-                      className="text-blue-500 hover:underline"
-                    >
-                      {linkAction}
+                    Already got an account?{" "}
+                    <a href="/login" className="text-blue-500 hover:underline">
+                      Log in
                     </a>
                   </Text>
                 </div>
